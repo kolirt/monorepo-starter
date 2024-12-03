@@ -1,0 +1,4 @@
+{
+  "extends": "@monorepo-starter/tsconfig/tsconfig.node.json",
+  "include": ["*.config.ts"]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "monorepo-starter",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build --parallel",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint --parallel",
+    "type-check": "turbo run type-check --parallel",
+    "format": "turbo run format:all --parallel",
+    "format:root": "prettier --write \"**/*.{ts,js,cjs,vue,json}\""
+  },
+  "engines": {
+    "node": ">=20.0.0 <21.0.0"
+  },
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@monorepo-starter/prettier": "*",
+    "turbo": "^2.1.2"
+  }
+}
