@@ -1,0 +1,21 @@
+{
+  "name": "@monorepo-starter/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write \"**/*.{ts,js,cjs,vue,json,prettierrc}\""
+  },
+  "files": [
+    "tsconfig.app.json",
+    "tsconfig.node.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@monorepo-starter/prettier": "*",
+    "@tsconfig/node20": "^20.1.4",
+    "@vue/tsconfig": "^0.5.1",
+    "@types/node": "^20.17.6"
+  }
+}

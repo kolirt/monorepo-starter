@@ -1,0 +1,10 @@
+{
+  "extends": "@monorepo-starter/tsconfig/tsconfig.app.json",
+  "include": ["./src/**/*", "./storybook/**/*", "./tests/**/*"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
