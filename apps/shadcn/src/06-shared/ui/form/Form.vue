@@ -1,9 +1,19 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+import { ValidationForm, useForm } from '@kolirt/vue-validation-kit'
+
+const emits = defineEmits<{
+  submit: []
+}>()
+
+const props = defineProps<{
+  form: ReturnType<typeof useForm>
+}>()
+</script>
 
 <template>
-  <form>
+  <ValidationForm @submit="emits('submit')" :form="props.form">
     <slot></slot>
-  </form>
+  </ValidationForm>
 </template>
 
 <style scoped></style>

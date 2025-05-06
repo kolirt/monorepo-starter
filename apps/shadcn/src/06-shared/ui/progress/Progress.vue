@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ProgressIndicator, ProgressRoot } from 'radix-vue'
 import { computed } from 'vue'
 
@@ -21,8 +21,8 @@ const calculatedValue = computed(() => {
 
 <template>
   <ProgressRoot
-    :as-child="props.asChild"
     :as="props.as"
+    :as-child="props.asChild"
     :class="cn('relative h-4 w-full overflow-hidden rounded-full bg-secondary', props.class)"
   >
     <ProgressIndicator

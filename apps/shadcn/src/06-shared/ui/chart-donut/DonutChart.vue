@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T extends Record<string, any>">
+<script generic="T extends Record<string, any>" lang="ts" setup>
 import { Donut } from '@unovis/ts'
 import { VisDonut, VisSingleContainer } from '@unovis/vue'
 import { useMounted } from '@vueuse/core'
@@ -51,22 +51,19 @@ const totalValue = computed(() =>
 
 <template>
   <div :class="cn('flex h-48 w-full flex-col items-end', $attrs.class ?? '')">
-    <VisSingleContainer :margin="{ left: 20, right: 20 }" :data="data" :style="{ height: isMounted ? '100%' : 'auto' }">
+    <VisSingleContainer :data="data" :margin="{ left: 20, right: 20 }" :style="{ height: isMounted ? '100%' : 'auto' }">
       <ChartSingleTooltip
-        :selector="Donut.selectors.segment"
+        :custom-tooltip="customTooltip"
         :index="category"
         :items="legendItems"
+        :selector="Donut.selectors.segment"
         :value-formatter="valueFormatter"
-        :custom-tooltip="customTooltip"
       />
 
       <VisDonut
-        :value="(d: Data) => d[category]"
-        :sort-function="sortFunction"
-        :color="colors"
         :arc-width="type === 'donut' ? 20 : 0"
-        :show-background="false"
         :central-label="type === 'donut' ? valueFormatter(totalValue) : ''"
+        :color="colors"
         :events="{
           [Donut.selectors.segment]: {
             click: (d: Data, ev: PointerEvent, i: number, elements: HTMLElement[]) => {
@@ -81,6 +78,9 @@ const totalValue = computed(() =>
             }
           }
         }"
+        :show-background="false"
+        :sort-function="sortFunction"
+        :value="(d: Data) => d[category]"
       />
 
       <slot />

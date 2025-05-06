@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Primitive } from 'radix-vue'
 import { computed } from 'vue'
 

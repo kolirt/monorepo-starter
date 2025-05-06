@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Primitive } from 'radix-vue'
 
 import { cn } from '@/06-shared'
@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<AlertProps>(), {
 </script>
 
 <template>
-  <Primitive role="alert" :as-child="props.asChild" :as="props.as" :class="cn(alertVariants({ variant }), props.class)">
+  <Primitive :as="props.as" :as-child="props.asChild" role="alert" :class="cn(alertVariants({ variant }), props.class)">
     <component v-if="props.icon" :is="props.icon" class="h-4 w-4" />
 
     <AlertTitle v-if="props.title">

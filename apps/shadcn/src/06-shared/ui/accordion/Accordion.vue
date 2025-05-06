@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { AccordionRoot, type AccordionRootEmits, useForwardPropsEmits } from 'radix-vue'
 import { computed } from 'vue'
 
@@ -14,11 +14,11 @@ const type = computed(() => (props.multiple ? 'multiple' : 'single'))
 </script>
 
 <template>
-  <AccordionRoot :type="type" v-bind="forwarded">
+  <AccordionRoot v-bind="forwarded" :type="type">
     <AccordionItem
       v-for="(item, index) in props.data"
-      :title="item.title"
       :disabled="item.disabled"
+      :title="item.title"
       :value="index"
       :key="index"
     >

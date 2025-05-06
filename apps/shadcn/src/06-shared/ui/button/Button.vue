@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Loader2Icon } from 'lucide-vue-next'
 import { Primitive } from 'radix-vue'
 import { computed } from 'vue'
@@ -81,7 +81,7 @@ const binds = computed(() => {
 </script>
 
 <template>
-  <Primitive :as="as" v-bind="binds">
+  <Primitive v-bind="binds" :as="as">
     <component
       v-if="props.iconPosition === 'left' && props.icon"
       :is="props.loading ? Loader2Icon : props.icon"

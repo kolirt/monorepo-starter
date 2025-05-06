@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { BulletLegendItemInterface } from '@unovis/ts'
 import { omit } from '@unovis/ts'
 import { VisTooltip } from '@unovis/vue'
@@ -57,9 +57,9 @@ function template(d: any, i: number, elements: (HTMLElement | SVGElement)[]) {
 <template>
   <VisTooltip
     :horizontal-shift="20"
-    :vertical-shift="20"
     :triggers="{
       [selector]: template
     }"
+    :vertical-shift="20"
   />
 </template>

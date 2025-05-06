@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ModalTarget } from '@kolirt/vue-modal'
 import { useRoute } from 'vue-router'
 

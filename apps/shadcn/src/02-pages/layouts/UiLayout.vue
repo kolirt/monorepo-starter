@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { LayoutDashboardIcon } from 'lucide-vue-next'
 import { useRoute } from 'vue-router'
 

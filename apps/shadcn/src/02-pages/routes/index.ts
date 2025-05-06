@@ -1,6 +1,5 @@
 import defaultRoutes from './default'
-import uiRoutes from './ui'
 
-const routes = [...defaultRoutes, ...uiRoutes]
+const routes = [...defaultRoutes]
 
 export { routes }

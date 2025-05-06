@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 // import { ActivityIcon, DollarSignIcon, UsersRoundIcon, WeightIcon } from 'lucide-vue-next'
 import { Button, Grid, PageWrapper } from '@/06-shared'
 
@@ -141,7 +141,7 @@ import { Button, Grid, PageWrapper } from '@/06-shared'
 </script>
 
 <template>
-  <PageWrapper title="Dashboard 12" description="Here's a list of your tasks for this month!">
+  <PageWrapper description="Here's a list of your tasks for this month!" title="Dashboard 12">
     <Grid columns="4">
       <Button>123</Button>
 

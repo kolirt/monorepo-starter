@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Carousel, type CarouselProps } from '@/06-shared'
 
 const props = withDefaults(defineProps<CarouselProps>(), {

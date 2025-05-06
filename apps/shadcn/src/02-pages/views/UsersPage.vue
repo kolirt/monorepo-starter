@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { LayoutDashboardIcon, UsersIcon } from 'lucide-vue-next'
 
 import { RouteNames } from '@/02-pages'
@@ -22,7 +22,7 @@ const breadcrumbs: BreadcrumbItemType[] = [
 </script>
 
 <template>
-  <PageWrapper title="Users" description="Here's a list of your tasks for this month!" :breadcrumbs="breadcrumbs">
+  <PageWrapper :breadcrumbs="breadcrumbs" description="Here's a list of your tasks for this month!" title="Users">
     <template #top-right>
       <Button>Download</Button>
     </template>

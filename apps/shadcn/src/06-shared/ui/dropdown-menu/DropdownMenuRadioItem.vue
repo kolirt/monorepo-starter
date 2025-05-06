@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Circle } from 'lucide-vue-next'
 import {
   DropdownMenuItemIndicator,

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { RouteNames } from '@/02-pages'
 </script>
 
@@ -15,4 +15,4 @@ import { RouteNames } from '@/02-pages'
   </header>
 </template>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

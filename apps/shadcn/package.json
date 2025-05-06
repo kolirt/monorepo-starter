@@ -21,6 +21,7 @@
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
     "@kolirt/vue-modal": "^1.0.3",
+    "@kolirt/vue-validation-kit": "^1.0.3",
     "@monorepo-starter/request": "*",
     "@unhead/vue": "^1.11.11",
     "@unovis/ts": "^1.5.0",

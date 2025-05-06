@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ArrowLeftIcon } from 'lucide-vue-next'
 
 import { Button, cn } from '@/06-shared'
@@ -15,9 +15,9 @@ const { orientation, canScrollPrev, scrollPrev } = useCarousel()
   <Button
     @click="scrollPrev"
     :disabled="!canScrollPrev"
-    variant="outline"
-    size="icon-xs"
     :icon="ArrowLeftIcon"
+    size="icon-xs"
+    variant="outline"
     :class="
       cn(
         'absolute touch-manipulation rounded-full',

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { type AspectRatioProps, AspectRatio as MasterAspectRatio } from '@/06-shared'
 
 const props = withDefaults(defineProps<AspectRatioProps>(), {

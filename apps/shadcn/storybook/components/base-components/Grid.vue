@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Grid, type GridProps } from '@/06-shared'
 
 const props = withDefaults(defineProps<GridProps>(), {

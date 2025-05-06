@@ -14,12 +14,12 @@ export default [
       // page('settings', RouteNames.Settings, () => import('@/02-pages/views/SettingsPage.vue')),
       // page('test', RouteNames.Test, () => import('@/02-pages/views/TestPage.vue'))
     ]
-  )
-  /*...group(
+  ),
+  ...group(
     {
       layout: Layouts.Auth,
       middleware: []
     },
-    [page('login', RouteNames.Login, () => import('@/02-pages/views/LoginPage.vue'))]
-  )*/
+    [page('login', RouteNames.Login, () => import('@/02-pages/views/auth/LoginPage.vue'))]
+  )
 ]

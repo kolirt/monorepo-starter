@@ -27,6 +27,7 @@
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
+  "attributeSort": "ASC",
   "attributeGroups": [
     "^ref",
     "^v-if",
@@ -35,6 +36,7 @@
     "^v-for",
     "^:?is$",
     "^@",
+    "^v-",
     "$DEFAULT",
     "^class$",
     "^:class$",

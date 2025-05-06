@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 // import { Card, CardContent, CardHeader, CardTitle } from '@/06-shared/ui/card'
 
 const props = defineProps<{

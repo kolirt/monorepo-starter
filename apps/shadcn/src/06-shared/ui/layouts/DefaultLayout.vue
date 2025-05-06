@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { MenuIcon, XIcon } from 'lucide-vue-next'
 import { ref } from 'vue'
 

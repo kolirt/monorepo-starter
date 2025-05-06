@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T extends Record<string, any>">
+<script generic="T extends Record<string, any>" lang="ts" setup>
 import { Area, Axis, type BulletLegendItemInterface, CurveType, Line } from '@unovis/ts'
 import { VisArea, VisAxis, VisLine, VisXYContainer } from '@unovis/vue'
 import { useMounted } from '@vueuse/core'
@@ -59,24 +59,24 @@ function handleLegendItemClick(d: BulletLegendItemInterface, i: number) {
   <div :class="cn('flex h-[400px] w-full flex-col items-end', $attrs.class ?? '')">
     <ChartLegend v-if="showLegend" @legend-item-click="handleLegendItemClick" v-model:items="legendItems" />
 
-    <VisXYContainer :margin="{ left: 20, right: 20 }" :data="data" :style="{ height: isMounted ? '100%' : 'auto' }">
-      <svg width="0" height="0">
+    <VisXYContainer :data="data" :margin="{ left: 20, right: 20 }" :style="{ height: isMounted ? '100%' : 'auto' }">
+      <svg height="0" width="0">
         <defs>
           <linearGradient
             v-for="(color, i) in colors"
             :id="`${chartRef}-color-${i}`"
             x1="0"
-            y1="0"
             x2="0"
+            y1="0"
             y2="1"
             :key="i"
           >
             <template v-if="showGradiant">
-              <stop offset="5%" :stop-color="color" stop-opacity="0.4" />
-              <stop offset="95%" :stop-color="color" stop-opacity="0" />
+              <stop :stop-color="color" offset="5%" stop-opacity="0.4" />
+              <stop :stop-color="color" offset="95%" stop-opacity="0" />
             </template>
             <template v-else>
-              <stop offset="0%" :stop-color="color" />
+              <stop :stop-color="color" offset="0%" />
             </template>
           </linearGradient>
         </defs>
@@ -85,61 +85,61 @@ function handleLegendItemClick(d: BulletLegendItemInterface, i: number) {
       <ChartCrosshair
         v-if="showTooltip"
         :colors="colors"
-        :items="legendItems"
-        :index="index"
         :custom-tooltip="customTooltip"
+        :index="index"
+        :items="legendItems"
       />
 
       <template v-for="(category, i) in categories" :key="category">
         <VisArea
-          :x="(d: Data, i: number) => i"
-          :y="(d: Data) => d[category]"
-          color="auto"
-          :curve-type="curveType"
           :attributes="{
             [Area.selectors.area]: {
               fill: `url(#${chartRef}-color-${i})`
             }
           }"
+          :curve-type="curveType"
           :opacity="legendItems.find((item) => item.name === category)?.inactive ? filterOpacity : 1"
+          :x="(d: Data, i: number) => i"
+          :y="(d: Data) => d[category]"
+          color="auto"
         />
       </template>
 
       <template v-for="(category, i) in categories" :key="category">
         <VisLine
-          :x="(d: Data, i: number) => i"
-          :y="(d: Data) => d[category]"
-          :color="colors[i]"
-          :curve-type="curveType"
           :attributes="{
             [selectors.line]: {
               opacity: legendItems.find((item) => item.name === category)?.inactive ? filterOpacity : 1
             }
           }"
+          :color="colors[i]"
+          :curve-type="curveType"
+          :x="(d: Data, i: number) => i"
+          :y="(d: Data) => d[category]"
         />
       </template>
 
       <VisAxis
         v-if="showXAxis"
-        type="x"
-        :tick-format="xFormatter ?? ((v: number) => data[v]?.[index])"
         :grid-line="false"
+        :tick-format="xFormatter ?? ((v: number) => data[v]?.[index])"
         :tick-line="false"
         tick-text-color="hsl(var(--vis-text-color))"
+        type="x"
       />
       <VisAxis
         v-if="showYAxis"
-        type="y"
-        :tick-line="false"
-        :tick-format="yFormatter"
-        :domain-line="false"
-        :grid-line="showGridLine"
         :attributes="{
           [Axis.selectors.grid]: {
             class: 'text-muted'
           }
         }"
+        :domain-line="false"
+        :grid-line="showGridLine"
+        :tick-format="yFormatter"
+        :tick-line="false"
         tick-text-color="hsl(var(--vis-text-color))"
+        type="y"
       />
 
       <slot />

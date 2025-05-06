@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { cn } from '@/06-shared'
 
 import CarouselContent from './CarouselContent.vue'

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { AspectRatio } from 'radix-vue'
 
 import { type AspectRatioProps } from './interface'

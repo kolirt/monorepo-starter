@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { AvatarFallback, AvatarImage, AvatarRoot } from 'radix-vue'
 
 import { cn } from '@/06-shared'
@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<AvatarProps>(), {
 </script>
 
 <template>
-  <AvatarRoot :as-child="props.asChild" :as="props.as" :class="cn(avatarVariant({ size, shape }), props.class)">
+  <AvatarRoot :as="props.as" :as-child="props.asChild" :class="cn(avatarVariant({ size, shape }), props.class)">
     <AvatarImage v-if="props.src" :src="props.src" />
     <AvatarFallback v-if="props.fallback">{{ props.fallback }}</AvatarFallback>
   </AvatarRoot>

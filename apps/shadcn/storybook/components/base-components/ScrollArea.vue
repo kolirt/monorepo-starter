@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed } from 'vue'
 
 import { ScrollArea, type ScrollAreaProps } from '@/06-shared'

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { LayoutDashboardIcon } from 'lucide-vue-next'
 import { useRoute } from 'vue-router'
 
@@ -72,7 +72,7 @@ const menu = [
     <template #nav-right>
       <DropdownMenu>
         <DropdownMenuTrigger as="button" class="aspect-square h-full">
-          <Avatar size="sm" fallback="CN" class="h-full w-full" />
+          <Avatar fallback="CN" size="sm" class="h-full w-full" />
         </DropdownMenuTrigger>
 
         <DropdownMenuContent align="end" class="min-w-40">

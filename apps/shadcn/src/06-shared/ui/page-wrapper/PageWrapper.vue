@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { RouterLink } from 'vue-router'
 
 import { ScrollArea } from '@/06-shared'
@@ -21,8 +21,8 @@ const props = defineProps<{
 </script>
 
 <template>
-  <ScrollArea type="auto" as="main" class="h-full">
-    <div class="flex-1 space-y-6 p-6">
+  <ScrollArea as="main" type="auto" class="h-full w-full bg-red-950"  >
+    <div class="flex-1 space-y-6 p-6 h-full w-full bg-blue-700 flex items-center justify-center">
       <div
         v-if="props.breadcrumbs || props.title || props.description || $slots.hasOwnProperty('top-right')"
         class="space-y-3"

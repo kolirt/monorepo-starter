@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -53,29 +53,29 @@ watch(
   <PaginationRoot
     @update:page="onPage"
     v-slot="{ page }"
-    show-edges
-    :as-child="props.asChild"
     :as="props.as"
-    :total="props.data.total"
-    :sibling-count="1"
-    :items-per-page="props.data.per_page"
+    :as-child="props.asChild"
     :disabled="props.disabled || props.loading"
+    :items-per-page="props.data.per_page"
     :page="currentPage"
+    :sibling-count="1"
+    :total="props.data.total"
+    show-edges
   >
     <PaginationList v-slot="{ items }" class="flex items-center gap-1">
       <PaginationFirst as-child>
-        <Button variant="outline" size="icon-default" :icon="ChevronsLeftIcon" />
+        <Button :icon="ChevronsLeftIcon" size="icon-default" variant="outline" />
       </PaginationFirst>
 
       <PaginationPrev as-child>
-        <Button variant="outline" size="icon-default" :icon="ChevronLeftIcon" />
+        <Button :icon="ChevronLeftIcon" size="icon-default" variant="outline" />
       </PaginationPrev>
 
       <template v-for="(item, index) in items">
         <PaginationListItem v-if="item.type === 'page'" :value="item.value" as-child :key="index">
           <Button
-            :variant="item.value === page ? 'default' : 'outline'"
             :loading="item.value === page && props.loading"
+            :variant="item.value === page ? 'default' : 'outline'"
             class="w-10 p-0"
           >
             {{ item.value }}
@@ -88,11 +88,11 @@ watch(
       </template>
 
       <PaginationNext as-child>
-        <Button variant="outline" size="icon-default" :icon="ChevronRightIcon" />
+        <Button :icon="ChevronRightIcon" size="icon-default" variant="outline" />
       </PaginationNext>
 
       <PaginationLast as-child>
-        <Button variant="outline" size="icon-default" :icon="ChevronsRightIcon" />
+        <Button :icon="ChevronsRightIcon" size="icon-default" variant="outline" />
       </PaginationLast>
     </PaginationList>
   </PaginationRoot>

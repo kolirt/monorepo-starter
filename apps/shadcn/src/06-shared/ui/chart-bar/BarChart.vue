@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T extends Record<string, any>">
+<script generic="T extends Record<string, any>" lang="ts" setup>
 import type { BulletLegendItemInterface } from '@unovis/ts'
 import { Axis, GroupedBar, StackedBar } from '@unovis/ts'
 import { VisAxis, VisGroupedBar, VisStackedBar, VisXYContainer } from '@unovis/vue'
@@ -61,17 +61,12 @@ const selectorsBar = computed(() => (props.type === 'grouped' ? GroupedBar.selec
       <ChartCrosshair
         v-if="showTooltip"
         :colors="colors"
-        :items="legendItems"
         :custom-tooltip="customTooltip"
         :index="index"
+        :items="legendItems"
       />
 
       <VisBarComponent
-        :x="(d: Data, i: number) => i"
-        :y="categories.map((category) => (d: Data) => d[category])"
-        :color="colors"
-        :rounded-corners="roundedCorners"
-        :bar-padding="0.05"
         :attributes="{
           [selectorsBar]: {
             opacity: (d: Data, i: number) => {
@@ -80,29 +75,34 @@ const selectorsBar = computed(() => (props.type === 'grouped' ? GroupedBar.selec
             }
           }
         }"
+        :bar-padding="0.05"
+        :color="colors"
+        :rounded-corners="roundedCorners"
+        :x="(d: Data, i: number) => i"
+        :y="categories.map((category) => (d: Data) => d[category])"
       />
 
       <VisAxis
         v-if="showXAxis"
-        type="x"
-        :tick-format="xFormatter ?? ((v: number) => data[v]?.[index])"
         :grid-line="false"
+        :tick-format="xFormatter ?? ((v: number) => data[v]?.[index])"
         :tick-line="false"
         tick-text-color="hsl(var(--vis-text-color))"
+        type="x"
       />
       <VisAxis
         v-if="showYAxis"
-        type="y"
-        :tick-line="false"
-        :tick-format="yFormatter"
-        :domain-line="false"
-        :grid-line="showGridLine"
         :attributes="{
           [Axis.selectors.grid]: {
             class: 'text-muted'
           }
         }"
+        :domain-line="false"
+        :grid-line="showGridLine"
+        :tick-format="yFormatter"
+        :tick-line="false"
         tick-text-color="hsl(var(--vis-text-color))"
+        type="y"
       />
 
       <slot />

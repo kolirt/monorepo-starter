@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Separator } from 'radix-vue'
 import { computed } from 'vue'
 
